@@ -1,15 +1,13 @@
 /*
- * ArduinoNunchuk.h - Improved Wii Nunchuk library for Arduino
- * 
- * Copyright 2011-2012 Gabriel Bianconi, http://www.gabrielbianconi.com/
+ * ArduinoNunchuk - Improved Wii Nunchuk library for Arduino
  *
- * Project URL: http://www.gabrielbianconi.com/projects/arduinonunchuk/
+ * Copyright 2012-2013 Eddie Groshev
+ *
+ * Project URL: https://github.com/EdsterG/ArduinoNunchuk
  *
  * Based on the following projects/websites:
- *   http://www.windmeadow.com/node/42
- *   http://todbot.com/blog/2008/02/18/wiichuck-wii-nunchuck-adapter-available/
- *   http://wiibrew.org/wiki/Wiimote/Extension_Controllers
- * 
+ *   http://www.gabrielbianconi.com/projects/arduinonunchuk/
+ *   http://www.timteatro.net/2012/02/10/a-library-for-using-the-wii-nunchuk-in-arduino-sketches/
  */
 
 #ifndef ArduinoNunchuk_H
@@ -32,10 +30,27 @@ class ArduinoNunchuk
     int zButton;
     int cButton;
   
-    void init();    
+    void init();  
     void update();
+    int cAnalogX();
+    int cAnalogY();
+    int cAccelX();
+    int cAccelY();
+    int cAccelZ();
+    int joyAngle();
+    int rollAngle();
+    int pitchAngle();
+    void calibrate_joy();
+    void calibrate_accelxy();
+    void calibrate_accelz();
+    static void wiiChuckPwr(); 
     
-  private:  
+  private: 
+    int _analogZeroX;
+    int _analogZeroY;
+    int _accelZeroX;
+    int _accelZeroY;
+    int _accelZeroZ; 
     void _sendByte(byte data, byte location);
 };
 
