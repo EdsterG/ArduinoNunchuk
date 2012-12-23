@@ -1,5 +1,5 @@
 ArduinoNunchuk - Improved Wii Nunchuk library for Arduino
-   The idea is to add built in support for the WiiChuk and built in calibration options.
+   The idea is to add built-in support for the WiiChuck adapter and built-in calibration options.
 
 Copyright 2011-2012 Eddie Groshev
 
