@@ -1,3 +1,15 @@
 ArduinoNunchuk	KEYWORD1
 init	KEYWORD2
 update	KEYWORD2
+cAnalogX  KEYWORD2
+cAnalogY  KEYWORD2
+cAccelX KEYWORD2
+cAccelY KEYWORD2
+cAccelZ KEYWORD2
+joyAngle  KEYWORD2
+rollAngle KEYWORD2
+pitchAngle  KEYWORD2
+calibrate_joy KEYWORD2
+calibrate_accelxy KEYWORD2
+calibrate_accelz  KEYWORD2
+wiiChuckPwr KEYWORD2
