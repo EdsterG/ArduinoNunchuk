@@ -1,9 +1,9 @@
 /*
  * ArduinoNunchuk Demo
  * 
- * Copyright 2011-2012 Gabriel Bianconi, http://www.gabrielbianconi.com/
+ * Copyright 2012-2013 Eddie Groshev
  *
- * Project URL: http://www.gabrielbianconi.com/projects/arduinonunchuk/
+ * Project URL: https://github.com/EdsterG/ArduinoNunchuk
  * 
  */
 
