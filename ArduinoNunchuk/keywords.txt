@@ -12,4 +12,6 @@ pitchAngle  KEYWORD2
 calibrate_joy KEYWORD2
 calibrate_accelxy KEYWORD2
 calibrate_accelz  KEYWORD2
-wiiChuckPwr KEYWORD2
+justPressed KEYWORD2
+justReleased KEYWORD2
+currentlyPressed KEYWORD2
