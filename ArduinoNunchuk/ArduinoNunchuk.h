@@ -19,9 +19,12 @@
   #include <WProgram.h>
 #endif
 
+#define NUM_BUTTONS 2
+
 class ArduinoNunchuk
 {  
-  public:  
+  public:
+    void init(bool wiichuck = true);
     int analogX;
     int analogY;
     int accelX;
@@ -30,7 +33,6 @@ class ArduinoNunchuk
     int zButton;
     int cButton;
   
-    void init();  
     void update();
     int cAnalogX();
     int cAnalogY();
@@ -40,18 +42,34 @@ class ArduinoNunchuk
     int joyAngle();
     int rollAngle();
     int pitchAngle();
-    void calibrate_joy();
+    void calibrate_joy(char location[] = "center");
     void calibrate_accelxy();
     void calibrate_accelz();
-    static void wiiChuckPwr(); 
-    
-  private: 
+    bool justPressed(char button);
+    bool justReleased(char button);
+    bool currentlyPressed(char button);
+
+    // This function is custom made for myself, DONT USE IN YOUR PROGRAM
+    void personalCalibrationValues();
+
+  private:
+
+    bool _currentlyPressed[NUM_BUTTONS];
+    bool _justPressed[NUM_BUTTONS];
+    bool _justReleased[NUM_BUTTONS];
+    void _checkButtons();
     int _analogZeroX;
     int _analogZeroY;
     int _accelZeroX;
     int _accelZeroY;
-    int _accelZeroZ; 
-    void _sendByte(byte data, byte location);
+    int _accelZeroZ;
+    float _upFactor;
+    float _downFactor;
+    float _leftFactor;
+    float _rightFactor;
+
+    static void _wiiChuckPwr(); 
+    static void _sendByte(byte data, byte location);
 };
 
 #endif
