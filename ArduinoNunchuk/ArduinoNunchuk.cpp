@@ -56,7 +56,7 @@ void ArduinoNunchuk::init(bool wiichuck){
   ArduinoNunchuk::update();
 
   // Calibrate joy center automatically on start up
-  ArduinoNunchuk::calibrate_joy();
+  ArduinoNunchuk::calibrate_joy("center");
   // See documentation for calibrate_accelxy()
   // These values can NOT be calibrated automatically
   _accelZeroX = ACCEL_ZEROX;
@@ -161,7 +161,7 @@ void ArduinoNunchuk::_wiiChuckPwr(){
 void ArduinoNunchuk::calibrate_joy(char location[]){
   ArduinoNunchuk::update();
   if (location == "center" && analogX<142 && analogX>112 && analogY<142 && analogY>112){
-    // This long and statement is used make sure the nunchuck isn't
+    // This long if statement is used make sure the nunchuck isn't
     // calibrated when the joystick is accidenly pushed to one of the
     // edges. It might not be needed, in that even I'll remove this check
     _analogZeroX = analogX;
